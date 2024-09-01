@@ -1,0 +1,524 @@
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* App Container */
+.app {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 300px;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    height: 100%;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.sidebar:hover {
+    width: 350px;
+}
+
+.sidebar h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ecf0f1;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.sidebar:hover h2 {
+    color: #3498db;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideIn 0.5s ease forwards;
+    animation-delay: calc(0.1s * var(--i));
+}
+
+.sidebar li a {
+    text-decoration: none;
+    color: #ecf0f1;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.sidebar li a:hover {
+    background-color: #34495e;
+    transform: scale(1.05);
+}
+
+.sidebar li a.active {
+    background-color: #2980b9;
+}
+
+.sidebar li a i {
+    margin-right: 15px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.sidebar li a:hover i {
+    transform: rotate(20deg);
+}
+
+/* Sidebar Animation */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Authentication Buttons */
+.auth-buttons {
+    margin-top: 50px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.auth-buttons button {
+    width: 80%;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #2980b9;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.auth-buttons button:hover {
+    background-color: #3498db;
+    transform: scale(1.1);
+}
+
+.auth-buttons button:last-child {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #2980b9;
+}
+
+.auth-buttons button:last-child:hover {
+    background-color: #fff;
+    color: #2c3e50;
+}
+
+/* Content Area */
+.content {
+    flex: 1;
+    padding: 80px;
+    background-color: #ecf0f1;
+    margin-left: 150px;
+}
+
+.sidebar:hover ~ .content {
+    margin-left: 350px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 0.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+header button {
+    background-color: #fff;
+    color: #2c3e50;
+    border: 2px solid #2c3e50;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+header button:hover {
+    background-color: #f5f6fa;
+    border-color: #3498db;
+    color: #3498db;
+    transform: scale(1.05);
+}
+
+.main-heading {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    opacity: 0;
+    animation: fadeIn 0.7s ease forwards;
+    animation-delay: 0.7s;
+}
+
+.tagline {
+    font-size: 1.8rem;
+    margin-bottom: 50px;
+    color: #7f8c8d;
+    opacity: 0;
+    animation: fadeIn 0.7s ease forwards;
+    animation-delay: 0.9s;
+}
+
+/* Try It Section */
+.try-it {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 70px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 50px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+.try-it h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.try-it button {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 15px 35px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.try-it button:hover {
+    background-color: #3498db;
+    border-color: #3498db;
+}
+
+/* Footer Styles */
+footer {
+    font-size: 1rem;
+    color: #95a5a6;
+    margin-top: 100px;
+    text-align: center;
+    padding: 30px 0;
+    background-color: #34495e;
+    color: #ecf0f1;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .sidebar:hover {
+        width: 250px;
+    }
+
+    .sidebar h2 {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .sidebar:hover h2 {
+        color: #ecf0f1;
+    }
+
+    .sidebar li a {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .sidebar li a i {
+        font-size: 1.2rem;
+    }
+
+    .content {
+        margin-left: 70px;
+        padding: 30px;
+    }
+
+    .sidebar:hover ~ .content {
+        margin-left: 250px;
+    }
+
+    header button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .main-heading {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.3rem;
+    }
+
+    .try-it h2 {
+        font-size: 1.8rem;
+    }
+
+    .try-it button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar:hover {
+        width: 220px;
+    }
+
+    .sidebar h2 {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .sidebar:hover h2 {
+        color: #ecf0f1;
+    }
+
+    .sidebar li a {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .sidebar li a i {
+        font-size: 1rem;
+    }
+
+    .content {
+        margin-left: 60px;
+        padding: 20px;
+    }
+
+    .sidebar:hover ~ .content {
+        margin-left: 220px;
+    }
+
+    header button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .main-heading {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    .try-it h2 {
+        font-size: 1.5rem;
+    }
+
+    .try-it button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Sign Up Button Styles */
+.sign-up {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #4285f4;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(66, 133, 244, 0.25);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.sign-up:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: all 0.6s;
+}
+
+.sign-up:hover {
+    background-color: #3367d6;
+    box-shadow: 0 6px 12px rgba(51, 103, 214, 0.4);
+    transform: translateY(-2px);
+}
+
+.sign-up:hover:before {
+    left: 100%;
+}
+
+.sign-up:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(51, 103, 214, 0.4);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(66, 133, 244, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(66, 133, 244, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(66, 133, 244, 0);
+    }
+}
+
+.sign-up:focus {
+    animation: pulse 1.5s infinite;
+}
+
+/* Try It Button Styles */
+.try-it {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #34a853;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(52, 168, 83, 0.25);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.try-it:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+.try-it:hover {
+  background-color: #2d9249;
+  box-shadow: 0 6px 12px rgba(52, 168, 83, 0.4);
+  transform: translateY(-2px);
+}
+
+.try-it:hover:before {
+  left: 100%;
+}
+
+.try-it:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(52, 168, 83, 0.4);
+}
+
+@keyframes try-it-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(52, 168, 83, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(52, 168, 83, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(52, 168, 83, 0);
+  }
+}
+
+.try-it:focus {
+  animation: try-it-pulse 1.5s infinite;
+}
